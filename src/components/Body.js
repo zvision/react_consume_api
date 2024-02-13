@@ -7,17 +7,19 @@ const Body = () => {
   const [nuOfRecord, setNuOfRecord] = useState(2);
 
   //hook
-
+  
   useEffect(() => {
     handleFetchRecords();
     return () => {
       setListItems([]);
     };
+	// eslint-disable-next-line
   }, []);
 
   /*
   useEffect(() => {
     handleFetchRecords();
+	// eslint-disable-next-line
   }, []);
   */
 
@@ -71,6 +73,8 @@ const Body = () => {
           type="number"
           fill="solid"
           value={nuOfRecord}
+		  min={0}
+          max={500}
           onChange={(e) => setNuOfRecord(e.target.value)}
         />
       </label>
